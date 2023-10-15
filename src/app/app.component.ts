@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Userlist';
+  isDialogOpen = false;
+  selectedUserName: string | null = null;
+
+  openDialog(userName: string) {
+    this.selectedUserName = userName;
+    this.isDialogOpen = true;
+  }
+
+  closeDialog() {
+    this.isDialogOpen = false;
+    this.selectedUserName = null;
+  }
 }
